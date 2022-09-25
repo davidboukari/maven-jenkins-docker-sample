@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Build and Install') {
             steps {
-                sh 'mvn -s settings-jenkins.xml clean install'
+                sh 'mvn -s settings-jenkins.xml clean install -U -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true'
             }
         }
     }
