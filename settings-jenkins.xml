@@ -1,0 +1,51 @@
+<settings>
+      <!--This sends everything else to /public -->
+  <mirrors>
+    <mirror>
+      <id>devopsschool</id>
+      <mirrorOf>*</mirrorOf>
+      <url>https://192.168.1.174:8443/repository/devopsschool-group</url>
+    </mirror>
+  </mirrors>
+  
+  <profiles>
+    <profile>
+      <id>devopsschool</id>
+      <!--Enable snapshots for the built in central repo to direct -->
+      <!--all requests to nexus via the mirror -->
+      <repositories>
+        <repository>
+          <id>devopsschool</id>
+          <url>https://192.168.1.174:8443/repository/devopsschool-hosted-release</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+      </repositories>
+
+     <pluginRepositories>
+        <pluginRepository>
+          <id>devopsschool</id>
+          <url>https://192.168.1.174:8443/repository/devopsschool-hosted-snapshot/</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+    
+  </profiles>
+<activeProfiles>
+    <!--make the profile active all the time -->
+    <activeProfile>devopsschool</activeProfile>
+  </activeProfiles>
+
+<!-- Credentials for deployment -->	  
+  <servers>
+	  
+    <server>
+      <id>devopsschool</id>
+      <username>${env.USER_CREDS_USR}</username>
+      <password>${env.USER_CREDS_PSW}</password> 
+
+    </server>
+  </servers>
+</settings>

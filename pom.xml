@@ -1,0 +1,44 @@
+<project>
+	
+<modelVersion>4.0.0</modelVersion>
+<groupId>com.example</groupId>
+<artifactId>devopsschool</artifactId>
+	
+<version>1.0.1-SNAPSHOT</version>
+
+<!-- Deployment section -->
+<!--	
+<distributionManagement>
+  <repository>
+  <id>devopsschool</id>
+  <name>Internal releases</name>
+  <url>https://192.168.1.174:8443/repository/devopsschool-hosted-release/</url>
+ </repository>
+
+ <snapshotRepository>
+  <id>devopsschool</id>
+  <name>internal releases</name>
+  <url>https://192.168.1.174:8443/repository/devopsschool-hosted-snapshot/</url>
+ </snapshotRepository>
+</distributionManagement>
+-->
+
+
+
+<dependencies>
+<dependency>
+<groupId>junit</groupId>
+<artifactId>junit</artifactId>
+<version>4.10</version>
+</dependency>
+
+<dependency>
+<groupId>junit</groupId>
+<artifactId>junit</artifactId>
+<version>4.13.1</version>
+</dependency>
+
+</dependencies>
+
+
+</project>
