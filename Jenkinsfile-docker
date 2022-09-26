@@ -10,9 +10,11 @@ pipeline {
   environment{
     USER_CREDS = credentials('devopsschool-nexus')
   }
+/*
   tools {
     maven 'mymaven-3.8.6' 
   }
+*/
   stages {
     stage('Build and Install') {
 
