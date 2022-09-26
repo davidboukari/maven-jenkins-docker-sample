@@ -15,7 +15,7 @@ pipeline {
 
       steps { 
         withMaven(maven : 'mymaven-3.8.6') {
-          sh 'mvn -s settings-jenkins.xml clean install -U -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true'
+          bat 'mvn -s settings-jenkins.xml clean install -U -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true'
 	}
 		
       }
