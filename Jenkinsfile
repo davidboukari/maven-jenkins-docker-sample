@@ -22,6 +22,18 @@ pipeline {
           sh 'mvn -s settings-jenkins.xml clean install -U -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true'
       }
     }
+
+    stage('SonarQube Analysis') {
+      steps {
+          withSonarQubeEnv('sonarqube-9.6.1')
+          {
+            sh 'mvn sonar:sonar'
+          }
+      }
+    }
+
+
+
   }
 }
 
